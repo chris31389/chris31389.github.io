@@ -17,7 +17,7 @@ nav:
   home: /
   about: /about/
   articles: /archives/
-  projects: projects_url
+  BDD: /tags/BDD
 
 
 # Links to your social media accounts.
@@ -25,10 +25,9 @@ nav:
 # (see https://fontawesome.com/icons?d=gallery&s=brands);
 # only 'mail' is an exception.
 social_links:
-  github: http://github.com/chris31389
-  twitter: /
-  facebook: /
-  linkedin: /chris31389
+  github: https://github.com/chris31389
+  twitter: https://twitter.com/Chris31389
+  linkedin: https://www.linkedin.com/in/cgbutler/
   mail: mailto:christopher_g_butler@hotmail.co.uk
 
 
@@ -56,7 +55,7 @@ logo:
   enabled: true
   width: 50
   height: 50
-  url: /images/logo.png
+  url: /images/me.jpeg
   gravatar: false
 
 # Customize the favicons.
