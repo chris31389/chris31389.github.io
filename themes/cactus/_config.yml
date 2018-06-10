@@ -72,10 +72,10 @@ favicon:
     url: /images/favicon.ico
     gravatar: false
   android:
-    url: /images/favicon-192x192.png
+    url: /images/computer-152-216996.png
     gravatar: false
   apple:
-    url: /images/apple-touch-icon.png
+    url: /images/computer-152-216996.png
     gravatar: false
 
 # The color scheme that should be used to highlight codeblocks.
