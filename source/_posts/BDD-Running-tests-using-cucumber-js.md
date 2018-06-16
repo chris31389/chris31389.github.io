@@ -1,7 +1,9 @@
 ---
 title: 'BDD: Running tests using cucumber.js'
 date: 2018-06-16 09:38:22
-tags:
+tags: 
+- BDD 
+- Cucumber.js 
 ---
 
 ## TL;DR
