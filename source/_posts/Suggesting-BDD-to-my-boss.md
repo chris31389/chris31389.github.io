@@ -6,11 +6,9 @@ tags: BDD
 
 ## TL;DR
 
-I'm trying to integrate automated testing into the development or release pipeline, to prove that any new code, doesn't break already existing functionality.  I've managed to convince my boss its a good idea using BDD, but i'm struggling to work out how to do it.  I've got some outstanding questions:
+> BDD is an approach for building a shared understanding on what software to build by working through examples.
 
-- Do we test only our product in isolation or test external services too?  
-- Where do we fit the automated testing into our release pipeline and branching strategy?
-- If we test using an external OAuth2 server, how can we replicate a user logging in using Implicit Grant flow so we can test a web based API?
+I've managed to convince my boss its a good idea using BDD and have been given the go ahead to look into its feasibility.  BDD can be presented in the form of automated tests using [cucumber.io](https://docs.cucumber.io/). I need to look into how to integrate BDD & automated testing into the development or release pipeline, to prove that any new code doesn't break already existing functionality.
 
 ## The Problem
 
@@ -21,8 +19,6 @@ I started a project at work about a year ago, and we're getting to the point whe
 - How can I reliably make sure that I don't break something the next time I write some code?  
 
 Testing is done manually.  This means that as the product grows, so will the time it takes to regression test.
-
-This is perhaps, something that I should have thought about earlier, but better late than never.
 
 ## The Solution
 
@@ -44,13 +40,17 @@ I found [this website](http://agilecoach.typepad.com/agile-coaching/2012/03/bdd-
 
 > BDD is an approach for building a shared understanding on what software to build by working through examples.
 
-![](../images/bdd-overview.jpg)
+![BDD Overview](../images/bdd-overview.jpg)
 
 > BDD is pretty simple, describe what you want the system to do by talking through example behaviour.Work from the outside-in to implement those behaviours using the examples to validate you're what you're building.
 
 This approach will help clarify what our product is supposed to do, through examples.  I'm the sort of person who prefers talking in examples.  I feel it shows my understanding of the requirements.  The challenge will be validating the examples are possible within our product.
 
 Validating examples can be done manually, or through automated testing.
+
+### Cucumber & Gherkins
+
+[Cucumber](https://docs.cucumber.io) is a concept of writing Gherkins which are human readable examples and verifying them.  Step Definitions can be written in a variety of languages that relate to each line within a Gherkin, allowing you to run the Gherkin as an automated test in a language of your choice.
 
 ## Implementing BDD and Automated Testing in our project
 
@@ -72,23 +72,25 @@ The developers will need to contribute to creating examples and possibly help im
 
 The tester is responsible for proving the requirements within the Backlog Item have been met and marking it as complete.
 
-
+The testers will need to contribute to creating examples and possibly help implement automated tests.  Their speciality in testing makes them crucial in creating edge case and erroneous examples.
 
 ### Who creates the examples and when
 
-At the beginning of our current sprint, a tester will wait for a developer to check in work to the main branch and release to a test environment.  Towards the end of the sprint, the developer cannot start any new development as the tester will not be able to test it before the end of the sprint, and the Backlog Item will be incomplete.  This means that there is testers waiting for work at the beginning and developers not sure what to do at the end.  
+[cucumber.io](https://docs.cucumber.io/guides/overview/) calls documents with written examples a *Gherkin*. They state:
 
-Introducing the need to write examples and verify them could help keep a constant workload for developers and testers.  
+>It’s usually best to let developers write Gherkin if the team is practicing BDD (test first).
+>
+>If Cucumber is used solely as a test automation tool (test after) it can be done by testers or developers.
+>
+>It is usually counterproductive to let product owners and business analysts write Gherkin. Instead, we recommend they participate in Example Mapping sessions and approve the Gherkin documents after a developer or tester has translated it to Gherkin.
 
-My suggestion is that testers write up the examples at the beginning of the sprint, when there is not much testing to do.
-
-## The Challenges
-
-- Who writes the examples?
-- How do we verify the examples?
+My suggestion is that testers write up the examples at the beginning of the sprint, when there is not much testing to do, and a developer or tester can write the Step Definitions to verify the examples.
 
 ## Lets chat with the boss
 
-## Summary
+So I talked to my boss about BDD and Cucumber.  Overall it was largely successful as he could see this was a good way to introduce automated testing and liked the idea of living documentation. He had some questions:
 
-The Business Analyst will start working closer with testers to verify examples meet the requirements and are not out of scope.
+- How can we integrate this into our existing build & release pipeline?
+- Can he see some examples
+
+I'm going to try and answer these question over the next few blog posts I make.
