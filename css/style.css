@@ -538,7 +538,7 @@ body {
   }
 }
 .max-width {
-  max-width: 48rem;
+  max-width: 64rem;
 }
 @media (max-width: 480px) {
   .px3 {
@@ -1206,6 +1206,11 @@ article .content .caption {
   vertical-align: top;
   text-align: center;
   font-size: 11px;
+}
+#footer .disclaimer {
+  width: 100%;
+  text-align: cetner;
+  font-size: 10px;
 }
 #footer ul {
   margin: 0;

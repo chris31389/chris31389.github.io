@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="TL;DRHere is the repository on Github chris31389/cucumber-example You can clone the repository and execute the following commands: 12npm installnpm test What is CucumberCucumber is a way of presenting">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BDD: Running tests using cucumber.js">
+<meta property="og:url" content="https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/index.html">
+<meta property="og:site_name" content="Chris Butler&#39;s Code Blog">
+<meta property="og:description" content="TL;DRHere is the repository on Github chris31389/cucumber-example You can clone the repository and execute the following commands: 12npm installnpm test What is CucumberCucumber is a way of presenting">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-16T11:19:37.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BDD: Running tests using cucumber.js">
+<meta name="twitter:description" content="TL;DRHere is the repository on Github chris31389/cucumber-example You can clone the repository and execute the following commands: 12npm installnpm test What is CucumberCucumber is a way of presenting">
+<meta name="twitter:creator" content="@chris31389">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/computer-152-216996.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/computer-152-216996.png">
+          
+        
+    
+    <!-- title -->
+    <title>BDD: Running tests using cucumber.js</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/tags/BDD">BDD</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/Suggesting-BDD-to-my-boss/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/&text=BDD: Running tests using cucumber.js"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/&title=BDD: Running tests using cucumber.js"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/&is_video=false&description=BDD: Running tests using cucumber.js"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=BDD: Running tests using cucumber.js&body=Check out this article: https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/&title=BDD: Running tests using cucumber.js"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/&title=BDD: Running tests using cucumber.js"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/&title=BDD: Running tests using cucumber.js"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/&title=BDD: Running tests using cucumber.js"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/&name=BDD: Running tests using cucumber.js&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#TL-DR"><span class="toc-number">1.</span> <span class="toc-text">TL;DR</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-Cucumber"><span class="toc-number">2.</span> <span class="toc-text">What is Cucumber</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Gherkins"><span class="toc-number">2.1.</span> <span class="toc-text">Gherkins</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Who-should-write-them"><span class="toc-number">2.1.1.</span> <span class="toc-text">Who should write them</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-Definitions"><span class="toc-number">2.2.</span> <span class="toc-text">Step Definitions</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Who-should-write-step-definitions"><span class="toc-number">2.2.1.</span> <span class="toc-text">Who should write step definitions</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lets-see-an-example"><span class="toc-number">3.</span> <span class="toc-text">Lets see an example</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Test-an-API"><span class="toc-number">4.</span> <span class="toc-text">Test an API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-number">5.</span> <span class="toc-text">Summary</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        BDD: Running tests using cucumber.js
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Chris Butler's Code Blog</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-06-16T08:38:22.000Z" itemprop="datePublished">2018-06-16</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h2><p>Here is the repository on Github <a href="https://github.com/chris31389/cucumber-example.git" target="_blank" rel="noopener">chris31389/cucumber-example</a></p>
+<p>You can clone the repository and execute the following commands:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm test</span><br></pre></td></tr></table></figure>
+<h2 id="What-is-Cucumber"><a href="#What-is-Cucumber" class="headerlink" title="What is Cucumber"></a>What is Cucumber</h2><p><a href="https://docs.cucumber.io/" target="_blank" rel="noopener">Cucumber</a> is a way of presenting and validating a scenario of how a system should work.  It is living documentation that changes as your system changes.  Cucumber consists of Gherkins and Step Definitions.</p>
+<h3 id="Gherkins"><a href="#Gherkins" class="headerlink" title="Gherkins"></a>Gherkins</h3><p>A gherkin is a human readable scenario of how the system should work.  Here is an example.</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Comment</span></span><br><span class="line"><span class="meta">@tag</span></span><br><span class="line"><span class="keyword">Feature</span>: Eating too many cucumbers may not be good for you</span><br><span class="line"></span><br><span class="line">  Eating too much of anything may not be good for you.</span><br><span class="line"></span><br><span class="line">  <span class="keyword">Scenario</span>: Eating a few is no problem</span><br><span class="line">    <span class="keyword">Given</span> Alice is hungry </span><br><span class="line">    <span class="keyword">When</span> she eats 3 cucumbers</span><br><span class="line">    <span class="keyword">Then</span> she will be full</span><br></pre></td></tr></table></figure>
+<h4 id="Who-should-write-them"><a href="#Who-should-write-them" class="headerlink" title="Who should write them"></a>Who should write them</h4><p>From the <a href="https://docs.cucumber.io/guides/overview/" target="_blank" rel="noopener">cucumber guide</a>:</p>
+<blockquote>
+<p>It’s usually best to let developers write Gherkin if the team is practicing BDD (test first).  </p>
+<p>If Cucumber is used solely as a test automation tool (test after) it can be done by testers or developers.</p>
+<p>It is usually counterproductive to let product owners and business analysts write Gherkin. Instead, we recommend they participate in Example Mapping sessions and approve the Gherkin documents after a developer or tester has translated it to Gherkin.</p>
+</blockquote>
+<p>I believe that the tester is the best person to write the Gherkin as they will be able to use their skill in testing edge cases to explore more scenarios than just the happy path.</p>
+<h3 id="Step-Definitions"><a href="#Step-Definitions" class="headerlink" title="Step Definitions"></a>Step Definitions</h3><p>Step definitions are snippets of code that get executed per line of the scenario.  Here is an example.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">When(<span class="string">"she eats &#123;number&#125; cucumbers"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">number</span>) </span>&#123;</span><br><span class="line">  alice.feed(<span class="number">3</span>, <span class="string">"cucumbers"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="Who-should-write-step-definitions"><a href="#Who-should-write-step-definitions" class="headerlink" title="Who should write step definitions"></a>Who should write step definitions</h4><p>From the <a href="https://docs.cucumber.io/guides/overview/" target="_blank" rel="noopener">cucumber guide</a>:</p>
+<blockquote>
+<p>The same people who write Gherkin should be writing step definitions. This is another reason the Gherkin is best written by developers and/or testers.</p>
+</blockquote>
+<p>Whilst I agree with this, I think that there may be times when someone different writes the step code to the person who wrote the Gherkin.</p>
+<h2 id="Lets-see-an-example"><a href="#Lets-see-an-example" class="headerlink" title="Lets see an example"></a>Lets see an example</h2><p>Here is a link to a <a href="http://cucumber.github.io/cucumber-js/" target="_blank" rel="noopener">live demo</a> from cucumber.js</p>
+<p>To get started, you need to make sure you have installed Node.js.  If you need to you can download the LTS version <a href="https://nodejs.org/en/" target="_blank" rel="noopener">here</a>.</p>
+<p>Open a command prompt and navigate to a new folder. (e.g. <code>C:\cucumber-example</code>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+<p>Accept all defaults, until it asks for a test command.  Enter <code>./node_modules/.bin/cucumber-js</code>.  Accept all other defaults.</p>
+<p>It should look like this:  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package name: (cucumber-example)</span><br><span class="line">version: (<span class="number">1.0</span>.<span class="number">0</span>)</span><br><span class="line">description:</span><br><span class="line">entry point: (index.js)</span><br><span class="line">test command: ./node_modules/.bin/cucumber-js</span><br><span class="line">git repository:</span><br><span class="line">keywords:</span><br><span class="line">author:</span><br><span class="line">license: (ISC)</span><br><span class="line">About to write to C:\dev\cucumber-example\package.json:</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"cucumber-example"</span>,</span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="string">"description"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="string">"main"</span>: <span class="string">"index.js"</span>,</span><br><span class="line">  <span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"cucumber-js"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"author"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="string">"license"</span>: <span class="string">"ISC"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Is this OK? (yes)</span><br></pre></td></tr></table></figure>
+<p>Now we need to install cucumber.js and the assertion library.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save chai cucumber</span><br></pre></td></tr></table></figure>
+<p>Add the following files</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># features/simple_math.feature</span></span><br><span class="line"><span class="keyword">Feature</span>: Simple maths</span><br><span class="line">  In order to do maths</span><br><span class="line">  As a developer</span><br><span class="line">  I want to increment variables</span><br><span class="line"></span><br><span class="line">  <span class="keyword">Scenario</span>: easy maths</span><br><span class="line">    <span class="keyword">Given</span> a variable set to 1</span><br><span class="line">    <span class="keyword">When</span> I increment the variable by 1</span><br><span class="line">    <span class="keyword">Then</span> the variable should contain 2</span><br><span class="line"></span><br><span class="line">  <span class="keyword">Scenario</span> <span class="keyword">Outline</span>: much more complex stuff</span><br><span class="line">    <span class="keyword">Given</span> a variable set to <span class="variable">&lt;var&gt;</span></span><br><span class="line">    <span class="keyword">When</span> I increment the variable by <span class="variable">&lt;increment&gt;</span></span><br><span class="line">    <span class="keyword">Then</span> the variable should contain <span class="variable">&lt;result&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Examples</span>:</span><br><span class="line">      |<span class="string"> var </span>|<span class="string"> increment </span>|<span class="string"> result </span>|</span><br><span class="line">      |<span class="string"> 100 </span>|<span class="string">         5 </span>|<span class="string">    105 </span>|</span><br><span class="line">      |<span class="string">  99 </span>|<span class="string">      1234 </span>|<span class="string">   1333 </span>|</span><br><span class="line">      |<span class="string">  12 </span>|<span class="string">         5 </span>|<span class="string">     17 </span>|</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// features/support/world.js</span></span><br><span class="line"><span class="keyword">const</span> &#123; setWorldConstructor &#125; = <span class="built_in">require</span>(<span class="string">'cucumber'</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomWorld</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">this</span>.variable = <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  setTo(number) &#123;</span><br><span class="line">    <span class="keyword">this</span>.variable = number</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  incrementBy(number) &#123;</span><br><span class="line">    <span class="keyword">this</span>.variable += number</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setWorldConstructor(CustomWorld)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// features/support/steps.js</span></span><br><span class="line"><span class="keyword">const</span> &#123; Given, When, Then &#125; = <span class="built_in">require</span>(<span class="string">'cucumber'</span>)</span><br><span class="line"><span class="keyword">const</span> &#123; expect &#125; = <span class="built_in">require</span>(<span class="string">'chai'</span>)</span><br><span class="line"></span><br><span class="line">Given(<span class="string">'a variable set to &#123;int&#125;'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">number</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.setTo(number)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">When(<span class="string">'I increment the variable by &#123;int&#125;'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">number</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.incrementBy(number)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Then(<span class="string">'the variable should contain &#123;int&#125;'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">number</span>) </span>&#123;</span><br><span class="line">  expect(<span class="keyword">this</span>.variable).to.eql(number)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>Then run our tests</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm test</span><br></pre></td></tr></table></figure>
+<p>You should get something like:</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; cucumber-example@<span class="number">1.0</span>.<span class="number">0</span> test C:\dev\cucumber-example</span><br><span class="line">&gt; cucumber-js</span><br><span class="line"></span><br><span class="line">............</span><br><span class="line"></span><br><span class="line"><span class="number">4</span> scenarios (<span class="number">4</span> passed)</span><br><span class="line"><span class="number">12</span> steps (<span class="number">12</span> passed)</span><br><span class="line"><span class="number">0</span>m00.<span class="number">004</span>s</span><br></pre></td></tr></table></figure>
+<h2 id="Test-an-API"><a href="#Test-an-API" class="headerlink" title="Test an API"></a>Test an API</h2><p>Lets up the game.  Lets add a feature to do a HTTP call and check its working as expected.</p>
+<p>We need to start with the Gherkin, so lets add this feature file:</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># features/retrieve_posts.feature</span></span><br><span class="line"><span class="keyword">Feature</span>: Getting posts</span><br><span class="line">    This feature is about retrieving post items from an api</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Scenario</span>: Get single with id 1</span><br><span class="line">        <span class="keyword">Given</span> a post id of 1</span><br><span class="line">        <span class="keyword">When</span> I get a single post</span><br><span class="line">        <span class="keyword">Then</span> it is successful</span><br></pre></td></tr></table></figure>
+<p>As we need to do a HTTP request, we can add an existing library to make HTTP requests easier.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save request</span><br></pre></td></tr></table></figure>
+<p>Lets write the Step Definitions:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// features/support/post-api.steps.js</span></span><br><span class="line"><span class="keyword">const</span> &#123; Given, When, Then &#125; = <span class="built_in">require</span>(<span class="string">'cucumber'</span>)</span><br><span class="line"><span class="keyword">const</span> assert = <span class="built_in">require</span>(<span class="string">'assert'</span>);</span><br><span class="line"><span class="keyword">const</span> request = <span class="built_in">require</span>(<span class="string">'request'</span>);</span><br><span class="line"></span><br><span class="line">Given(<span class="string">'a post id of &#123;int&#125;'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">input</span>) </span>&#123;</span><br><span class="line">    id = input;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">When(<span class="string">'I get a single post'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>&#123;</span><br><span class="line">    request.get(<span class="string">`https://jsonplaceholder.typicode.com/posts/<span class="subst">$&#123;id&#125;</span>`</span>, (err, response, body) =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">            callback(err);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            apiResponse = response;</span><br><span class="line">            callback();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Then(<span class="string">'it is successful'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    isSuccess = apiResponse.statusCode &gt;= <span class="number">200</span> &amp;&amp; apiResponse.statusCode &lt; <span class="number">300</span>;</span><br><span class="line">    assert.equal(isSuccess, <span class="literal">true</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Now we can run our tests again</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm test</span><br></pre></td></tr></table></figure>
+<p>You should get something like:</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; cucumber-example@<span class="number">1.0</span>.<span class="number">0</span> test C:\dev\cucumber-example</span><br><span class="line">&gt; cucumber-js</span><br><span class="line"></span><br><span class="line">............</span><br><span class="line"></span><br><span class="line"><span class="number">5</span> scenarios (<span class="number">5</span> passed)</span><br><span class="line"><span class="number">15</span> steps (<span class="number">15</span> passed)</span><br><span class="line"><span class="number">0</span>m00.<span class="number">223</span>s</span><br></pre></td></tr></table></figure>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>We can use cucumber.js to verify that our system works as expected.  What we have here is just a demonstration of how to start a project.</p>
+<p>One consideration is the world object and how to manage the sequential execution of step definitions.  The step definitions need to make sure that they can be run with any step preceding it and could be written in a defencive manor e.g. checking variables exist.</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/tags/BDD">BDD</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#TL-DR"><span class="toc-number">1.</span> <span class="toc-text">TL;DR</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-Cucumber"><span class="toc-number">2.</span> <span class="toc-text">What is Cucumber</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Gherkins"><span class="toc-number">2.1.</span> <span class="toc-text">Gherkins</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Who-should-write-them"><span class="toc-number">2.1.1.</span> <span class="toc-text">Who should write them</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-Definitions"><span class="toc-number">2.2.</span> <span class="toc-text">Step Definitions</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Who-should-write-step-definitions"><span class="toc-number">2.2.1.</span> <span class="toc-text">Who should write step definitions</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lets-see-an-example"><span class="toc-number">3.</span> <span class="toc-text">Lets see an example</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Test-an-API"><span class="toc-number">4.</span> <span class="toc-text">Test an API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-number">5.</span> <span class="toc-text">Summary</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/&text=BDD: Running tests using cucumber.js"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/&title=BDD: Running tests using cucumber.js"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/&is_video=false&description=BDD: Running tests using cucumber.js"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=BDD: Running tests using cucumber.js&body=Check out this article: https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/&title=BDD: Running tests using cucumber.js"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/&title=BDD: Running tests using cucumber.js"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/&title=BDD: Running tests using cucumber.js"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/&title=BDD: Running tests using cucumber.js"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/&name=BDD: Running tests using cucumber.js&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <section class="disclaimer">
+      <blockquote>Disclaimer: The opinions expressed herein are my own personal opinions and do not represent my employer’s view in any way.</blockquote>
+  </section>
+  <div class="footer-left">
+    Copyright &copy; 2018 Chris Butler
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/tags/BDD">BDD</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'chris31389';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
