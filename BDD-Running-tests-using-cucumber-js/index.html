@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="TL;DRHere is the repository on Github chris31389/cucumber-example You can clone the repository and execute the following commands: 12npm installnpm test What is CucumberCucumber is a way of presenting">
-<meta name="keywords" content="BDD,Cucumber.js">
+    <meta name="description" content="TL;DRHere is the repository on GitHub chris31389/cucumber-example You can clone the repository and execute the following commands: 12npm installnpm test What is CucumberCucumber is a way of presenting">
+<meta name="keywords" content="BDD,Cucumber.js,Testing">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BDD: Running tests using cucumber.js">
 <meta property="og:url" content="https://chris31389.github.io/BDD-Running-tests-using-cucumber-js/index.html">
 <meta property="og:site_name" content="Chris Butler&#39;s Code Blog">
-<meta property="og:description" content="TL;DRHere is the repository on Github chris31389/cucumber-example You can clone the repository and execute the following commands: 12npm installnpm test What is CucumberCucumber is a way of presenting">
+<meta property="og:description" content="TL;DRHere is the repository on GitHub chris31389/cucumber-example You can clone the repository and execute the following commands: 12npm installnpm test What is CucumberCucumber is a way of presenting">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-16T18:53:14.469Z">
+<meta property="og:updated_time" content="2018-06-17T07:29:10.783Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BDD: Running tests using cucumber.js">
-<meta name="twitter:description" content="TL;DRHere is the repository on Github chris31389/cucumber-example You can clone the repository and execute the following commands: 12npm installnpm test What is CucumberCucumber is a way of presenting">
+<meta name="twitter:description" content="TL;DRHere is the repository on GitHub chris31389/cucumber-example You can clone the repository and execute the following commands: 12npm installnpm test What is CucumberCucumber is a way of presenting">
 <meta name="twitter:creator" content="@chris31389">
     
     
@@ -69,12 +69,16 @@
           <li><a href="/tags/BDD">BDD</a></li>
          
           <li><a href="/tags/Cucumber-js">Cucumber.js</a></li>
+         
+          <li><a href="/tags/Angular">Angular</a></li>
         
       </ul>
     </span>
     <br/>
     <span id="actions">
       <ul>
+        
+        <li><a class="icon" href="/How-to-use-Angulars-Protractor-with-Cucumber-js/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
         <li><a class="icon" href="/Suggesting-BDD-to-my-boss/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -134,7 +138,7 @@
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/BDD/">BDD</a>, <a class="tag-link" href="/tags/Cucumber-js/">Cucumber.js</a>
+        <a class="tag-link" href="/tags/BDD/">BDD</a>, <a class="tag-link" href="/tags/Cucumber-js/">Cucumber.js</a>, <a class="tag-link" href="/tags/Testing/">Testing</a>
     </div>
 
 
@@ -143,7 +147,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h2 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h2><p>Here is the repository on Github <a href="https://github.com/chris31389/cucumber-example.git" target="_blank" rel="noopener">chris31389/cucumber-example</a></p>
+    <h2 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h2><p>Here is the repository on GitHub <a href="https://github.com/chris31389/cucumber-example.git" target="_blank" rel="noopener">chris31389/cucumber-example</a></p>
 <p>You can clone the repository and execute the following commands:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm test</span><br></pre></td></tr></table></figure>
 <h2 id="What-is-Cucumber"><a href="#What-is-Cucumber" class="headerlink" title="What is Cucumber"></a>What is Cucumber</h2><p><a href="https://docs.cucumber.io/" target="_blank" rel="noopener">Cucumber</a> is a way of presenting and validating a scenario of how a system should work.  It is living documentation that changes as your system changes.  Cucumber consists of Gherkins and Step Definitions.</p>
@@ -193,6 +197,7 @@
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; cucumber-example@<span class="number">1.0</span>.<span class="number">0</span> test C:\dev\cucumber-example</span><br><span class="line">&gt; cucumber-js</span><br><span class="line"></span><br><span class="line">............</span><br><span class="line"></span><br><span class="line"><span class="number">5</span> scenarios (<span class="number">5</span> passed)</span><br><span class="line"><span class="number">15</span> steps (<span class="number">15</span> passed)</span><br><span class="line"><span class="number">0</span>m00.<span class="number">223</span>s</span><br></pre></td></tr></table></figure>
 <h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>We can use cucumber.js to verify that our system works as expected.  What we have here is just a demonstration of how to start a project.</p>
 <p>One consideration is the world object and how to manage the sequential execution of step definitions.  The step definitions need to make sure that they can be run with any step preceding it and could be written in a defencive manor e.g. checking variables exist.</p>
+<p>Here is the <a href="https://github.com/chris31389/cucumber-example.git" target="_blank" rel="noopener">completed example on GitHub</a></p>
 
   </div>
 </article>
@@ -222,6 +227,8 @@
           <li><a href="/tags/BDD">BDD</a></li>
          
           <li><a href="/tags/Cucumber-js">Cucumber.js</a></li>
+         
+          <li><a href="/tags/Angular">Angular</a></li>
         
       </ul>
     </div>
@@ -277,6 +284,8 @@
           <li><a href="/tags/BDD">BDD</a></li>
          
           <li><a href="/tags/Cucumber-js">Cucumber.js</a></li>
+         
+          <li><a href="/tags/Angular">Angular</a></li>
         
       </ul>
     </nav>

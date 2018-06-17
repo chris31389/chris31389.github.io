@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="TL;DRHere is the repository on GitHub chris31389/angular-protractor-cucumber-example You are required to have @angular/cli installed and can install it using 1npm install -g @angular/cli You can clone">
+<meta name="keywords" content="BDD,Cucumber.js,Angular,Protractor,Testing">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to use Angular&#39;s Protractor with Cucumber.js">
+<meta property="og:url" content="https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/index.html">
+<meta property="og:site_name" content="Chris Butler&#39;s Code Blog">
+<meta property="og:description" content="TL;DRHere is the repository on GitHub chris31389/angular-protractor-cucumber-example You are required to have @angular/cli installed and can install it using 1npm install -g @angular/cli You can clone">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-17T07:29:48.663Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How to use Angular&#39;s Protractor with Cucumber.js">
+<meta name="twitter:description" content="TL;DRHere is the repository on GitHub chris31389/angular-protractor-cucumber-example You are required to have @angular/cli installed and can install it using 1npm install -g @angular/cli You can clone">
+<meta name="twitter:creator" content="@chris31389">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/computer-152-216996.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/computer-152-216996.png">
+          
+        
+    
+    <!-- title -->
+    <title>How to use Angular&#39;s Protractor with Cucumber.js</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/tags/BDD">BDD</a></li>
+         
+          <li><a href="/tags/Cucumber-js">Cucumber.js</a></li>
+         
+          <li><a href="/tags/Angular">Angular</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/BDD-Running-tests-using-cucumber-js/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/&text=How to use Angular&#39;s Protractor with Cucumber.js"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/&title=How to use Angular&#39;s Protractor with Cucumber.js"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/&is_video=false&description=How to use Angular&#39;s Protractor with Cucumber.js"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=How to use Angular&#39;s Protractor with Cucumber.js&body=Check out this article: https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/&title=How to use Angular&#39;s Protractor with Cucumber.js"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/&title=How to use Angular&#39;s Protractor with Cucumber.js"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/&title=How to use Angular&#39;s Protractor with Cucumber.js"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/&title=How to use Angular&#39;s Protractor with Cucumber.js"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/&name=How to use Angular&#39;s Protractor with Cucumber.js&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#TL-DR"><span class="toc-number">1.</span> <span class="toc-text">TL;DR</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-number">2.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Getting-Started"><span class="toc-number">3.</span> <span class="toc-text">Getting Started</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Adding-Cucumber-js"><span class="toc-number">4.</span> <span class="toc-text">Adding Cucumber.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-number">5.</span> <span class="toc-text">Summary</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        How to use Angular&#39;s Protractor with Cucumber.js
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Chris Butler's Code Blog</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-06-17T06:23:26.000Z" itemprop="datePublished">2018-06-17</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Angular/">Angular</a>, <a class="tag-link" href="/tags/BDD/">BDD</a>, <a class="tag-link" href="/tags/Cucumber-js/">Cucumber.js</a>, <a class="tag-link" href="/tags/Protractor/">Protractor</a>, <a class="tag-link" href="/tags/Testing/">Testing</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h2><p>Here is the repository on GitHub <a href="https://github.com/chris31389/angular-protractor-cucumber-example.git" target="_blank" rel="noopener">chris31389/angular-protractor-cucumber-example</a></p>
+<p>You are required to have @angular/cli installed and can install it using</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @angular/cli</span><br></pre></td></tr></table></figure>
+<p>You can clone the repository and execute the following commands:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm test</span><br></pre></td></tr></table></figure>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>In <a href="/BDD-Running-tests-using-cucumber-js">my previous post</a> I introduce Cucumber and Cucumber.js.  Here I will integrate Cucumber.js with Angular’s Protractor so we can run some automated UI tests.</p>
+<h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><p>To get started, you need to make sure you have installed Node.js.  If you need to you can download the LTS version <a href="https://nodejs.org/en/" target="_blank" rel="noopener">here</a>.</p>
+<p>We will need an angular project which we can generate using <a href="https://cli.angular.io/" target="_blank" rel="noopener">Angular’s CLI</a>. To install it run:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @angular/cli</span><br></pre></td></tr></table></figure>
+<p>With <a href="https://cli.angular.io/" target="_blank" rel="noopener">Angular’s CLI</a> installed, we can generate an angular website with protractor already set up.  At a convenient location, run:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng new angular-protractor-cucumber-example</span><br></pre></td></tr></table></figure>
+<p>We can run the existing Protractor tests using:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run e2e</span><br></pre></td></tr></table></figure>
+<h2 id="Adding-Cucumber-js"><a href="#Adding-Cucumber-js" class="headerlink" title="Adding Cucumber.js"></a>Adding Cucumber.js</h2><p>Lets get started</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save cucumber @types/cucumber protractor-cucumber-framework chai @types/chai</span><br></pre></td></tr></table></figure>
+<p>Remove the <code>e2e/src</code> folder and its contents.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm e2e/src -Recurse</span><br></pre></td></tr></table></figure>
+<p>Add the following files:</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># e2e/app/app.feature</span></span><br><span class="line"><span class="keyword">Feature</span>: Visit Website</span><br><span class="line">    As a user</span><br><span class="line">    I need to see the websites content</span><br><span class="line">    So that I decide what to do next</span><br><span class="line"></span><br><span class="line"><span class="keyword">Scenario</span>: Visit page</span><br><span class="line">    <span class="keyword">When</span> I got to the page</span><br><span class="line">    <span class="keyword">Then</span> I see the title <span class="string">"Welcome to app!"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// e2e/app/app.steps.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; When, Then, Before &#125; <span class="keyword">from</span> <span class="string">"cucumber"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; expect &#125; <span class="keyword">from</span> <span class="string">"chai"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; AppPage &#125; <span class="keyword">from</span> <span class="string">"./app.po"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> appPage: AppPage;</span><br><span class="line"></span><br><span class="line">Before(<span class="function"><span class="params">()</span> =&gt;</span> (appPage = <span class="keyword">new</span> AppPage()));</span><br><span class="line"></span><br><span class="line">When(<span class="string">"I got to the page"</span>, <span class="function"><span class="params">()</span> =&gt;</span> appPage.navigateTo());</span><br><span class="line"></span><br><span class="line">Then(<span class="string">"I see the title &#123;string&#125;"</span>, <span class="function">(<span class="params">expectedText: <span class="built_in">string</span></span>) =&gt;</span> &#123;</span><br><span class="line">  appPage</span><br><span class="line">    .getParagraphText()</span><br><span class="line">    .then(<span class="function"><span class="params">actualText</span> =&gt;</span> expect(actualText).to.equal(expectedText));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// e2e/app/app.po/ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; browser, by, element &#125; <span class="keyword">from</span> <span class="string">'protractor'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> AppPage &#123;</span><br><span class="line">  navigateTo() &#123;</span><br><span class="line">    <span class="keyword">return</span> browser.get(<span class="string">'/'</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  getParagraphText() &#123;</span><br><span class="line">    <span class="keyword">return</span> element(by.css(<span class="string">'app-root h1'</span>)).getText();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Now we need to update the protractor.conf.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// e2e/protractor.conf.js</span></span><br><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">  SpecReporter</span><br><span class="line">&#125; = <span class="built_in">require</span>(<span class="string">'jasmine-spec-reporter'</span>);</span><br><span class="line"></span><br><span class="line">exports.config = &#123;</span><br><span class="line">  allScriptsTimeout: <span class="number">11000</span>,</span><br><span class="line">  specs: [</span><br><span class="line">    <span class="string">'./**/*.feature'</span></span><br><span class="line">  ],</span><br><span class="line">  capabilities: &#123;</span><br><span class="line">    <span class="string">'browserName'</span>: <span class="string">'chrome'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  directConnect: <span class="literal">true</span>,</span><br><span class="line">  baseUrl: <span class="string">'http://localhost:4200/'</span>,</span><br><span class="line">  <span class="comment">// Use a custom framework adapter and set its relative path</span></span><br><span class="line">  framework: <span class="string">'custom'</span>,</span><br><span class="line">  frameworkPath: <span class="built_in">require</span>.resolve(<span class="string">'protractor-cucumber-framework'</span>),</span><br><span class="line"></span><br><span class="line">  <span class="comment">// cucumber command line options</span></span><br><span class="line">  cucumberOpts: &#123;</span><br><span class="line">    <span class="comment">// require step definition files before executing features</span></span><br><span class="line">    <span class="built_in">require</span>: [<span class="string">'./**/*.steps.ts'</span>],</span><br><span class="line">    <span class="comment">// &lt;string[]&gt; (expression) only execute the features or scenarios with tags matching the expression</span></span><br><span class="line">    tags: [],</span><br><span class="line">    <span class="comment">// &lt;boolean&gt; fail if there are any undefined or pending steps</span></span><br><span class="line">    strict: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// &lt;string[]&gt; (type[:path]) specify the output format, optionally supply PATH to redirect formatter output (repeatable)</span></span><br><span class="line">    format: [],</span><br><span class="line">    <span class="comment">// &lt;boolean&gt; invoke formatters without executing steps</span></span><br><span class="line">    dryRun: <span class="literal">false</span>,</span><br><span class="line">    <span class="comment">// &lt;string[]&gt; ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)</span></span><br><span class="line">    compiler: []</span><br><span class="line">  &#125;,</span><br><span class="line">  onPrepare() &#123;</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">'ts-node'</span>).register(&#123;</span><br><span class="line">      project: <span class="built_in">require</span>(<span class="string">'path'</span>).join(__dirname, <span class="string">'./tsconfig.e2e.json'</span>)</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Now if we run our tests</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run e2e</span><br></pre></td></tr></table></figure>
+<p>We get something similar to:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> scenario (<span class="number">1</span> passed)</span><br><span class="line"><span class="number">2</span> steps (<span class="number">2</span> passed)</span><br><span class="line"><span class="number">0</span>m01.<span class="number">140</span>s</span><br><span class="line">[<span class="number">08</span>:<span class="number">17</span>:<span class="number">46</span>] I/launcher - <span class="number">0</span> instance(s) of WebDriver still running</span><br><span class="line">[<span class="number">08</span>:<span class="number">17</span>:<span class="number">46</span>] I/launcher - chrome #<span class="number">01</span> passed</span><br></pre></td></tr></table></figure>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>Writing protractor test using Cucumber helps make the test human readable.  As we separate the steps from the test itself, it encourages DRY (Don’t Repeat Yourself).</p>
+<p>Here is the <a href="https://github.com/chris31389/angular-protractor-cucumber-example.git" target="_blank" rel="noopener">completed example on GitHub</a></p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/tags/BDD">BDD</a></li>
+         
+          <li><a href="/tags/Cucumber-js">Cucumber.js</a></li>
+         
+          <li><a href="/tags/Angular">Angular</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#TL-DR"><span class="toc-number">1.</span> <span class="toc-text">TL;DR</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-number">2.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Getting-Started"><span class="toc-number">3.</span> <span class="toc-text">Getting Started</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Adding-Cucumber-js"><span class="toc-number">4.</span> <span class="toc-text">Adding Cucumber.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-number">5.</span> <span class="toc-text">Summary</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/&text=How to use Angular&#39;s Protractor with Cucumber.js"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/&title=How to use Angular&#39;s Protractor with Cucumber.js"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/&is_video=false&description=How to use Angular&#39;s Protractor with Cucumber.js"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=How to use Angular&#39;s Protractor with Cucumber.js&body=Check out this article: https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/&title=How to use Angular&#39;s Protractor with Cucumber.js"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/&title=How to use Angular&#39;s Protractor with Cucumber.js"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/&title=How to use Angular&#39;s Protractor with Cucumber.js"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/&title=How to use Angular&#39;s Protractor with Cucumber.js"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://chris31389.github.io/How-to-use-Angulars-Protractor-with-Cucumber-js/&name=How to use Angular&#39;s Protractor with Cucumber.js&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <section class="disclaimer">
+      <blockquote>Disclaimer: The opinions expressed herein are my own personal opinions and do not represent my employer’s view in any way.</blockquote>
+  </section>
+  <div class="footer-left">
+    Copyright &copy; 2018 Chris Butler
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/tags/BDD">BDD</a></li>
+         
+          <li><a href="/tags/Cucumber-js">Cucumber.js</a></li>
+         
+          <li><a href="/tags/Angular">Angular</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'chris31389';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
