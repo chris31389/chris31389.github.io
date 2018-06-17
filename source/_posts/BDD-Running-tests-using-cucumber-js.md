@@ -4,11 +4,12 @@ date: 2018-06-16 09:38:22
 tags: 
 - BDD 
 - Cucumber.js 
+- Testing
 ---
 
 ## TL;DR
 
-Here is the repository on Github [chris31389/cucumber-example](https://github.com/chris31389/cucumber-example.git)
+Here is the repository on GitHub [chris31389/cucumber-example](https://github.com/chris31389/cucumber-example.git)
 
 You can clone the repository and execute the following commands:
 
@@ -279,3 +280,5 @@ You should get something like:
 We can use cucumber.js to verify that our system works as expected.  What we have here is just a demonstration of how to start a project.
 
 One consideration is the world object and how to manage the sequential execution of step definitions.  The step definitions need to make sure that they can be run with any step preceding it and could be written in a defencive manor e.g. checking variables exist.
+
+Here is the [completed example on GitHub](https://github.com/chris31389/cucumber-example.git)
